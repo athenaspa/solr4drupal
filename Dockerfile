@@ -1,4 +1,4 @@
-FROM solr:6.5
+FROM solr:6
 
 ADD solr_6.x_config /opt/docker-solr/configsets/drupal/conf
 
