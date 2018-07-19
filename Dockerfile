@@ -1,6 +1,11 @@
-FROM solr:6
+FROM solr:7
 
-ADD solr_6.x_config /opt/docker-solr/configsets/drupal/conf
+LABEL maintainer="e.righetto@athena.eu "
+
+# Copy configurations custom.
+ADD solr_7.x_config /opt/docker-solr/configsets/drupal/conf
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["solr-create","-c","corporateb2b","-d","/opt/docker-solr/configsets/drupal/conf"]
+
+# Create default core of project.
+CMD ["solr-create", "-c", "corporateb2b", "-d", "/opt/docker-solr/configsets/drupal/conf"]
