@@ -1,9 +1,7 @@
-FROM solr:7
-
-LABEL maintainer="e.righetto@athena.eu"
+FROM solr:8
 
 # Copy configurations custom.
-ADD solr_7.x_config /opt/docker-solr/configsets/drupal/conf
+ADD solr_8.x_config /opt/docker-solr/configsets/drupal/conf
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
